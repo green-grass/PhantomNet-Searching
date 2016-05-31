@@ -1,0 +1,12 @@
+﻿{
+  "projects": [
+    "src",
+    "test",
+    "src/services",
+    "../PhantomNet-Entities/src",
+    "../PhantomNet-Entities/src/services"
+  ],
+  "sdk": {
+    "version": "1.0.0-preview1-002702"
+  }
+}
