@@ -75,6 +75,7 @@ namespace PhantomNet.Searching.Elastic
 
             if (!result.IsValid)
             {
+                // TODO:: Log error
                 return null;
             }
 
