@@ -3,6 +3,6 @@
     public class EntitiesSearchResult<TEntity> : SearchResult<TEntity>
         where TEntity : class
     {
-        public virtual long UnfilteredTotal { get; set; }
+        public long UnfilteredTotal { get; set; }
     }
 }

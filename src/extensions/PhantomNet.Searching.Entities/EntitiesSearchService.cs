@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -16,9 +15,19 @@ namespace PhantomNet.Searching.Entities
         where TSearchParameters : class
         where TSearchResult : EntitiesSearchResult<TEntity>, new()
     {
+        public EntitiesSearchService(IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider)
+        {
+            if (searchProvider == null)
+            {
+                throw new ArgumentNullException(nameof(searchProvider));
+            }
+
+            SearchProvider = searchProvider;
+        }
+
         #region Properties
 
-        protected IEntitiesSearchProvider<TEntity, TSearchParameters> SearchProvider { get; set; }
+        protected IEntitiesSearchProvider<TEntity, TSearchParameters> SearchProvider { get; }
 
         protected virtual CancellationToken CancellationToken => CancellationToken.None;
 

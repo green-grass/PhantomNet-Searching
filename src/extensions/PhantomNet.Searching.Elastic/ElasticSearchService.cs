@@ -42,11 +42,11 @@ namespace PhantomNet.Searching.Elastic
             SearchProvider = searchProvider;
         }
 
-        protected IEnumerable<Uri> Connections { get; set; }
+        protected IEnumerable<Uri> Connections { get; }
 
-        protected string IndexName { get; set; }
+        protected string IndexName { get; }
 
-        protected IElasticSearchProvider<TEntity, TSearchParameters> SearchProvider { get; set; }
+        protected IElasticSearchProvider<TEntity, TSearchParameters> SearchProvider { get; }
 
         public virtual async Task<TSearchResult> SearchAsync(TSearchParameters parameters)
         {
