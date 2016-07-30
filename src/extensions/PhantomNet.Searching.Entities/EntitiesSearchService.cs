@@ -65,7 +65,7 @@ namespace PhantomNet.Searching.Entities
                 var store = Store as IEagerLoadingEntityStore<TEntity>;
                 if (store == null)
                 {
-                    throw new NotSupportedException(Resources.StoreNotIEagerLoadingEntityStore);
+                    throw new NotSupportedException(Strings.StoreNotIEagerLoadingEntityStore);
                 }
 
                 return store;
@@ -89,7 +89,7 @@ namespace PhantomNet.Searching.Entities
                 var store = Store as IQueryableEntityStore<TEntity>;
                 if (store == null)
                 {
-                    throw new NotSupportedException(Resources.StoreNotIQueryableEntityStore);
+                    throw new NotSupportedException(Strings.StoreNotIQueryableEntityStore);
                 }
 
                 return store;

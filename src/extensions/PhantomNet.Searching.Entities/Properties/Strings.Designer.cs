@@ -5,10 +5,10 @@ namespace PhantomNet.Searching.Entities
     using System.Reflection;
     using System.Resources;
 
-    internal static class Resources
+    internal static class Strings
     {
         private static readonly ResourceManager _resourceManager
-            = new ResourceManager("PhantomNet.Searching.Entities.Resources", typeof(Resources).GetTypeInfo().Assembly);
+            = new ResourceManager("PhantomNet.Searching.Entities.Strings", typeof(Strings).GetTypeInfo().Assembly);
 
         /// <summary>
         /// Store does not implement IEagerLoadingEntityStore&lt;TEntity&gt;.
