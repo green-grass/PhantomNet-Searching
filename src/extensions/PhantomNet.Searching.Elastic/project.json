@@ -1,5 +1,15 @@
 ﻿{
-  "version": "1.0.0-*",
+  "title": "PhantomNet.Searching.Elastic",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.Searching.Elastic class library",
+  "language": "en",
+  "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-Searching/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-Searching"
+  },
 
   "dependencies": {
     "Microsoft.Extensions.Options": "1.0.0",

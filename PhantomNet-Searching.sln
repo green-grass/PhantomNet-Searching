@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6E678F7D-78D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2E1E192C-294B-460B-A72D-5E89B698F545}"
 	ProjectSection(SolutionItems) = preProject
+		Build.ps1 = Build.ps1
 		global.json = global.json
 	EndProjectSection
 EndProject
