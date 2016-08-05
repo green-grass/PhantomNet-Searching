@@ -13,7 +13,7 @@ namespace PhantomNet.Searching.Entities
         : ISearchService<TEntity, TSearchParameters, TSearchResult>
         where TEntity : class
         where TSearchParameters : class
-        where TSearchResult : EntitiesSearchResult<TEntity>, new()
+        where TSearchResult : SearchResult<TEntity>, new()
     {
         public EntitiesSearchService(IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider)
         {
@@ -102,14 +102,14 @@ namespace PhantomNet.Searching.Entities
 
         public virtual async Task<TSearchResult> SearchAsync(TSearchParameters parameters)
         {
+            var models = Entities;
+
             var result = new TSearchResult();
             var offset = (SearchProvider.GetPageNumber(parameters) - 1) * SearchProvider.GetPageSize(parameters);
             var limit = SearchProvider.GetPageSize(parameters);
-            var models = Entities;
 
             // Pre-filter
             models = SearchProvider.PreFilter(models, parameters);
-            result.UnfilteredTotal = await SearchProvider.CountAsync(models, CancellationToken);
 
             // Filter
             models = SearchProvider.Filter(models, parameters);
