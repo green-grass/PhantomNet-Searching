@@ -11,8 +11,8 @@ namespace PhantomNet.Searching
 
         public virtual int PageSize { get; set; }
 
-        public virtual ICollection<TEntity> Entities { get; set; }
+        public virtual IEnumerable<TEntity> Entities { get; set; }
 
-        public virtual ICollection<IFilter> Filters { get; set; }
+        public virtual IEnumerable<IFilter> Filters { get; set; }
     }
 }

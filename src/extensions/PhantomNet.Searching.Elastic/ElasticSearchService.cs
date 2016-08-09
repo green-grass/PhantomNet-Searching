@@ -79,14 +79,7 @@ namespace PhantomNet.Searching.Elastic
                 return null;
             }
 
-            var searchResult = new TSearchResult {
-                Total = result.Total,
-                PageNumber = SearchProvider.GetPageNumber(parameters),
-                PageSize = SearchProvider.GetPageSize(parameters),
-                Entities = result.Documents.ToList(),
-                Filters = new List<IFilter>()
-            };
-
+            var filters = new List<IFilter>();
             foreach (var item in result.Aggregations)
             {
                 var filter = SearchProvider.SelectFilter(item.Key);
@@ -107,11 +100,17 @@ namespace PhantomNet.Searching.Elastic
                     filter.ParameterNames = SearchProvider.MapParameterNames(item.Key);
                     filter.DisplayText = item.Key;
                     SearchProvider.ActivateFilterOption(filter, parameters);
-                    searchResult.Filters.Add(filter);
+                    filters.Add(filter);
                 }
             }
 
-            return searchResult;
+            return new TSearchResult {
+                Total = result.Total,
+                PageNumber = SearchProvider.GetPageNumber(parameters),
+                PageSize = SearchProvider.GetPageSize(parameters),
+                Entities = result.Documents,
+                Filters = filters
+            };
         }
 
         public virtual Task<SuggestResult<TEntity, TSearchResult>> SuggestAsync(TSearchParameters parameters)

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using PhantomNet.Entities;
@@ -19,6 +15,8 @@ namespace PhantomNet.Searching.Entities
         where TSearchParameters : class
         where TSearchResult : SearchResult<TSearchEntity>, new()
     {
+        #region Constructors
+
         public EntitiesSearchService(
             IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider,
             IDisposable store,
@@ -37,6 +35,8 @@ namespace PhantomNet.Searching.Entities
             SearchProvider = searchProvider;
         }
 
+        #endregion
+
         #region Properties
 
         protected IEntitiesSearchProvider<TEntity, TSearchParameters> SearchProvider { get; }
@@ -49,21 +49,19 @@ namespace PhantomNet.Searching.Entities
         {
             var entities = Entities;
             var searchDescriptor = SearchProvider.BuildSearchDescriptor(parameters);
+
             var offset = ((searchDescriptor?.PageNumber - 1) * searchDescriptor?.PageSize) ?? 0;
             var limit = searchDescriptor?.PageSize ?? int.MaxValue;
-
             var result = await SearchEntitiesInternalAsync(entities, searchDescriptor);
+            var filters = await SearchProvider.GetFilters(parameters);
 
-            var searchResult = new TSearchResult() {
+            return new TSearchResult() {
                 Total = result.FilterredCount,
                 PageNumber = offset + 1,
                 PageSize = limit,
-                Entities = result.Results.Select(x => Mapper.Map<TSearchEntity>(x)).ToList()
+                Entities = result.Results.Select(x => Mapper.Map<TSearchEntity>(x)),
+                Filters = filters
             };
-
-            // TODO:: Filters
-
-            return searchResult;
         }
 
         public virtual Task<SuggestResult<TSearchEntity, TSearchResult>> SuggestAsync(TSearchParameters parameters)
