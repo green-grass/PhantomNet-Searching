@@ -15,14 +15,21 @@ namespace PhantomNet.Searching.Entities
         where TSearchParameters : class
         where TSearchResult : SearchResult<TEntity>, new()
     {
-        public EntitiesSearchService(IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider)
+        public EntitiesSearchService(
+            IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider,
+            IDisposable store)
         {
             if (searchProvider == null)
             {
                 throw new ArgumentNullException(nameof(searchProvider));
             }
+            if (store == null)
+            {
+                throw new ArgumentNullException(nameof(store));
+            }
 
             SearchProvider = searchProvider;
+            Store = store;
         }
 
         #region Properties
