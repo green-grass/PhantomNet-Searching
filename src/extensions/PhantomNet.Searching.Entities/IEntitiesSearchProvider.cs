@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using PhantomNet.Entities;
 
 namespace PhantomNet.Searching.Entities
 {
@@ -8,18 +6,6 @@ namespace PhantomNet.Searching.Entities
         where TEntity : class
         where TSearchParameters : class
     {
-        string GetSortExpression(TSearchParameters parameters);
-
-        bool GetSortReverse(TSearchParameters parameters);
-
-        IQueryable<TEntity> PreFilter(IQueryable<TEntity> query, TSearchParameters parameters);
-
-        IQueryable<TEntity> Filter(IQueryable<TEntity> query, TSearchParameters parameters);
-
-        IQueryable<TEntity> PreSort(IQueryable<TEntity> query);
-
-        IQueryable<TEntity> DefaultSort(IQueryable<TEntity> query);
-
-        Task<int> CountAsync(IQueryable<TEntity> entities, CancellationToken cancellationToken);
+        IEntitySearchDescriptor<TEntity> BuildSearchDescriptor(TSearchParameters parameters);
     }
 }

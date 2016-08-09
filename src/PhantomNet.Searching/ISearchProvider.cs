@@ -10,10 +10,6 @@ namespace PhantomNet.Searching
 
         IEnumerable<string> MapParameterNames(string filterDisplayText);
 
-        int GetPageNumber(TSearchParameters parameters);
-
-        int GetPageSize(TSearchParameters parameters);
-
         void ActivateFilterOption(IFilter filter, TSearchParameters parameters);
     }
 }

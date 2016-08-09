@@ -6,6 +6,10 @@ namespace PhantomNet.Searching.Elastic
         where TEntity : class
         where TSearchParameters : class
     {
+        int GetPageNumber(TSearchParameters parameters);
+
+        int GetPageSize(TSearchParameters parameters);
+
         ISearchRequest BuildRequest(SearchDescriptor<TEntity> searchDescripter, TSearchParameters parameters);
     }
 }
