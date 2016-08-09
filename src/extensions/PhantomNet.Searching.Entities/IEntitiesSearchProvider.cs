@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using PhantomNet.Entities;
+﻿using PhantomNet.Entities;
 
 namespace PhantomNet.Searching.Entities
 {
@@ -9,7 +7,5 @@ namespace PhantomNet.Searching.Entities
         where TSearchParameters : class
     {
         IEntitySearchDescriptor<TEntity> BuildSearchDescriptor(TSearchParameters parameters);
-
-        Task<IEnumerable<IFilter>> GetFilters(TSearchParameters parameters);
     }
 }

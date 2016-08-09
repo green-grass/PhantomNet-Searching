@@ -19,7 +19,7 @@ namespace PhantomNet.Searching.Entities
 
         public EntitiesSearchService(
             IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider,
-            IDisposable store,
+            IEntitiesSearchStore<TSearchParameters> store,
             EntityErrorDescriber errors)
             : base(store, null, null, null, null, errors, null)
         {
@@ -39,6 +39,8 @@ namespace PhantomNet.Searching.Entities
 
         #region Properties
 
+        protected IEntitiesSearchStore<TSearchParameters> EntitiesSearchStore => (IEntitiesSearchStore<TSearchParameters>)Store;
+
         protected IEntitiesSearchProvider<TEntity, TSearchParameters> SearchProvider { get; }
 
         #endregion
@@ -53,7 +55,7 @@ namespace PhantomNet.Searching.Entities
             var offset = ((searchDescriptor?.PageNumber - 1) * searchDescriptor?.PageSize) ?? 0;
             var limit = searchDescriptor?.PageSize ?? int.MaxValue;
             var result = await SearchEntitiesInternalAsync(entities, searchDescriptor);
-            var filters = await SearchProvider.GetFilters(parameters);
+            var filters = await EntitiesSearchStore.GetFilters(parameters);
 
             return new TSearchResult() {
                 Total = result.FilterredCount,
