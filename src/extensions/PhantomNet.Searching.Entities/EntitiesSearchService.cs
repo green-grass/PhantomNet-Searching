@@ -5,17 +5,19 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using PhantomNet.Entities;
 
 namespace PhantomNet.Searching.Entities
 {
     // Foundation
-    public partial class EntitiesSearchService<TEntity, TSearchParameters, TSearchResult>
-        : EntityManagerBase<TEntity, EntitiesSearchService<TEntity, TSearchParameters, TSearchResult>>,
-          ISearchService<TEntity, TSearchParameters, TSearchResult>
+    public partial class EntitiesSearchService<TEntity, TSearchEntity, TSearchParameters, TSearchResult>
+        : EntityManagerBase<TEntity, EntitiesSearchService<TEntity, TSearchEntity, TSearchParameters, TSearchResult>>,
+          ISearchService<TSearchEntity, TSearchParameters, TSearchResult>
         where TEntity : class
+        where TSearchEntity : class
         where TSearchParameters : class
-        where TSearchResult : SearchResult<TEntity>, new()
+        where TSearchResult : SearchResult<TSearchEntity>, new()
     {
         public EntitiesSearchService(
             IEntitiesSearchProvider<TEntity, TSearchParameters> searchProvider,
@@ -56,7 +58,7 @@ namespace PhantomNet.Searching.Entities
                 Total = result.FilterredCount,
                 PageNumber = offset + 1,
                 PageSize = limit,
-                Entities = result.Results.ToList()
+                Entities = result.Results.Select(x => Mapper.Map<TSearchEntity>(x)).ToList()
             };
 
             // TODO:: Filters
@@ -64,7 +66,7 @@ namespace PhantomNet.Searching.Entities
             return searchResult;
         }
 
-        public virtual Task<SuggestResult<TEntity, TSearchResult>> SuggestAsync(TSearchParameters parameters)
+        public virtual Task<SuggestResult<TSearchEntity, TSearchResult>> SuggestAsync(TSearchParameters parameters)
         {
             throw new NotImplementedException();
         }

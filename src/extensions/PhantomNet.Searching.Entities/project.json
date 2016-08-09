@@ -12,6 +12,7 @@
   },
 
   "dependencies": {
+    "AutoMapper": "4.2.1",
     "NETStandard.Library": "1.6.0",
     "PhantomNet.Entities": "1.0.3-*",
     "PhantomNet.Searching": "1.0.0-*"
