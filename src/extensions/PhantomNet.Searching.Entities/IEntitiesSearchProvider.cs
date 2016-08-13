@@ -1,11 +1,21 @@
-﻿using PhantomNet.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using PhantomNet.Entities;
 
 namespace PhantomNet.Searching.Entities
 {
-    public interface IEntitiesSearchProvider<TEntity, TSearchParameters> : ISearchProvider<TEntity, TSearchParameters>
+    public interface IEntitiesSearchProvider<TEntity, TModel, TParameters, TStore>
         where TEntity : class
-        where TSearchParameters : class
+        where TModel : class
+        where TParameters : class
+        where TStore : IDisposable
     {
-        IEntitySearchDescriptor<TEntity> BuildSearchDescriptor(TSearchParameters parameters);
+        IEntitySearchDescriptor<TEntity> BuildSearchDescriptor(TParameters parameters);
+
+        Task<IEnumerable<IFilter>> RetrievePresearchFilters(TStore store, IQueryable<TEntity> entities, TParameters parameters);
+
+        Task<IEnumerable<IFilter>> RetrievePostsearchFilters(TStore store, IQueryable<TEntity> entities, TParameters parameters);
     }
 }

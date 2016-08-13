@@ -7,5 +7,7 @@ namespace PhantomNet.Searching
         IEnumerable<string> ParameterNames { get; set; }
 
         string DisplayText { get; set; }
+
+        void SetOptionsAvailability(IFilter postsearchFilter);
     }
 }

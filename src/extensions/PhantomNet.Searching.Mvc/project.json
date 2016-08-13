@@ -1,0 +1,25 @@
+{
+  "title": "PhantomNet.Searching.Mvc",
+  "copyright": "Green Grass",
+  "description": "PhantomNet.Searching.Mvc class library",
+  "language": "en",
+  "version": "1.0.0-beta-*",
+  "authors": [ "Minh Nguyen" ],
+
+  "packOptions": {
+    "licenseUrl": "https://github.com/green-grass/PhantomNet-Searching/blob/master/LICENSE",
+    "projectUrl": "https://github.com/green-grass/PhantomNet-Searching"
+  },
+
+  "dependencies": {
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
+    "NETStandard.Library": "1.6.0",
+    "PhantomNet.Searching": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}

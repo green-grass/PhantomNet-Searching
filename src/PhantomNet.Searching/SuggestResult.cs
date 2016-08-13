@@ -1,8 +1,8 @@
 ﻿namespace PhantomNet.Searching
 {
-    public class SuggestResult<TEntity, TSearchResult>
-        where TEntity : class
-        where TSearchResult : SearchResult<TEntity>
+    public class SuggestResult<TModel, TSearchResult>
+        where TModel : class
+        where TSearchResult : SearchResult<TModel>
     {
         public string Suggestions { get; set; }
 

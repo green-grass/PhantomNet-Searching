@@ -6,6 +6,8 @@
 
         long EntityCount { get; set; }
 
+        string Group { get; set; }
+
         string DisplayText { get; }
 
         string DisplayTextWithEntityCount { get; }

@@ -20,6 +20,10 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Elasti
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Entities", "src\extensions\PhantomNet.Searching.Entities\PhantomNet.Searching.Entities.xproj", "{6ED3C951-BED4-452A-A9CD-6860BB4BEA91}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Mvc", "src\extensions\PhantomNet.Searching.Mvc\PhantomNet.Searching.Mvc.xproj", "{BA57556D-8849-418A-AC26-EF2F03C53509}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Entities.AspNetCore", "src\extensions\PhantomNet.Searching.Entities.AspNetCore\PhantomNet.Searching.Entities.AspNetCore.xproj", "{31A329FE-F6F1-411A-AB07-E0405FCC42A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{6ED3C951-BED4-452A-A9CD-6860BB4BEA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED3C951-BED4-452A-A9CD-6860BB4BEA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED3C951-BED4-452A-A9CD-6860BB4BEA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA57556D-8849-418A-AC26-EF2F03C53509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA57556D-8849-418A-AC26-EF2F03C53509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA57556D-8849-418A-AC26-EF2F03C53509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA57556D-8849-418A-AC26-EF2F03C53509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A329FE-F6F1-411A-AB07-E0405FCC42A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A329FE-F6F1-411A-AB07-E0405FCC42A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A329FE-F6F1-411A-AB07-E0405FCC42A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A329FE-F6F1-411A-AB07-E0405FCC42A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,5 +59,7 @@ Global
 		{1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE} = {6E678F7D-78D4-4FB6-8E70-77E7986FDB6B}
 		{34B6841E-B830-4B48-8228-DABD289F4272} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
 		{6ED3C951-BED4-452A-A9CD-6860BB4BEA91} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
+		{BA57556D-8849-418A-AC26-EF2F03C53509} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
+		{31A329FE-F6F1-411A-AB07-E0405FCC42A0} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
 	EndGlobalSection
 EndGlobal
