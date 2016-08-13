@@ -65,4 +65,4 @@ exec { & dotnet pack .\src\PhantomNet.Searching -c Release -o .\artifacts --vers
 exec { & dotnet pack .\src\extensions\PhantomNet.Searching.Entities -c Release -o .\artifacts --version-suffix=$revision }
 exec { & dotnet pack .\src\extensions\PhantomNet.Searching.Entities.AspNetCore -c Release -o .\artifacts --version-suffix=$revision }
 exec { & dotnet pack .\src\extensions\PhantomNet.Searching.Elastic -c Release -o .\artifacts --version-suffix=$revision }
-exec { & dotnet pack .\src\extensions\PhantomNet.Searching.Mvc-c Release -o .\artifacts --version-suffix=$revision }
+exec { & dotnet pack .\src\extensions\PhantomNet.Searching.Mvc -c Release -o .\artifacts --version-suffix=$revision }
