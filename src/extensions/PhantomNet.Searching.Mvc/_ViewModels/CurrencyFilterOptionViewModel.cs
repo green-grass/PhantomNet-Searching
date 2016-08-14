@@ -6,7 +6,7 @@
     }
 
     public class CurrencyFilterOptionViewModel
-        : FilterOptionViewModelBase,
+        : FilterOptionViewModel,
           ICurrencyFilterOptionViewModel
     {
         public double Value { get; set; }

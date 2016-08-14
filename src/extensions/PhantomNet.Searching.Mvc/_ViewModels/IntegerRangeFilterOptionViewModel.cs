@@ -8,7 +8,7 @@
     }
 
     public class IntegerRangeFilterOptionViewModel
-        : FilterOptionViewModelBase,
+        : FilterOptionViewModel,
           IIntegerRangeFilterOptionViewModel
     {
         public int Start { get; set; }

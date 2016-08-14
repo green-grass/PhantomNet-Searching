@@ -9,7 +9,7 @@ namespace PhantomNet.Searching.Mvc
     }
 
     public class KeyValueFilterOptionViewModel<TKey>
-        : FilterOptionViewModelBase,
+        : FilterOptionViewModel,
           IKeyValueFilterOptionViewModel<TKey>
         where TKey : IEquatable<TKey>
     {

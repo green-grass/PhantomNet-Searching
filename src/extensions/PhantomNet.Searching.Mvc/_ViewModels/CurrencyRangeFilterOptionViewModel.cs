@@ -8,7 +8,7 @@
     }
 
     public class CurrencyRangeFilterOptionViewModel
-        : FilterOptionViewModelBase,
+        : FilterOptionViewModel,
           ICurrencyRangeFilterOptionViewModel
     {
         public double Start { get; set; }

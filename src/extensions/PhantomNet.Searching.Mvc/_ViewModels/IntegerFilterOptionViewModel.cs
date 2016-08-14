@@ -6,7 +6,7 @@
     }
 
     public class IntegerFilterOptionViewModel
-        : FilterOptionViewModelBase,
+        : FilterOptionViewModel,
           IIntegerFilterOptionViewModel
     {
         public int Value { get; set; }

@@ -6,7 +6,7 @@
     }
 
     public class StringFilterOptionViewModel
-        : FilterOptionViewModelBase,
+        : FilterOptionViewModel,
           IStringFilterOptionViewModel
     {
         public string Value { get; set; }
