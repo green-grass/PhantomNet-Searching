@@ -4,12 +4,12 @@
     {
         bool IsActive { get; set; }
 
-        long EntityCount { get; set; }
+        long MatchCount { get; set; }
 
         string Group { get; set; }
 
         string DisplayText { get; }
 
-        string DisplayTextWithEntityCount { get; }
+        string DisplayTextWithMatchCount { get; }
     }
 }
