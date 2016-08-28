@@ -29,14 +29,36 @@ namespace PhantomNet.Searching.Entities
             }
         }
 
-        internal async Task<EntityQueryResult<TEntity>> SearchAsync(
+        internal Task<EntityQueryResult<TEntity>> SearchAsync(
             IEntitySearchDescriptor<TEntity> searchDescriptor,
             Func<TStore, IQueryable<TEntity>, Task> retrieveFiltersAsync,
             Func<TStore, IQueryable<TEntity>, Task> refineFiltersAsync)
         {
             ThrowIfDisposed();
+            if (SupportsQueryableEntity)
+            {
+                return SearchInternalAsync(QueryableEntityStore.Entities, searchDescriptor, retrieveFiltersAsync, refineFiltersAsync);
+            }
 
-            var entities = Entities;
+            throw new NotImplementedException();
+        }
+
+        private async Task<EntityQueryResult<TEntity>> SearchInternalAsync(
+            IQueryable<TEntity> entities,
+            IEntitySearchDescriptor<TEntity> searchDescriptor,
+            Func<TStore, IQueryable<TEntity>, Task> retrieveFiltersAsync,
+            Func<TStore, IQueryable<TEntity>, Task> refineFiltersAsync)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException(nameof(entities));
+            }
+
+            if (SupportsEagerLoadingEntity)
+            {
+                entities = EagerLoadingEntityStore.EagerLoad(entities);
+            }
+
             var result = new EntityQueryResult<TEntity>();
 
             entities = PreFilter(entities, searchDescriptor);
@@ -51,7 +73,10 @@ namespace PhantomNet.Searching.Entities
 
             result.Results = Page(entities, searchDescriptor);
 
-            await TryEeagerLoadingEntities(result.Results);
+            if (SupportsExplicitLoadingEntity)
+            {
+                await ExplicitLoadingEntityStore.ExplicitLoadAsync(result.Results, CancellationToken);
+            }
 
             return result;
         }
