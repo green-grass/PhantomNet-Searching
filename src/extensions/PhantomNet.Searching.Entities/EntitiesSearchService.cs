@@ -91,7 +91,7 @@ namespace PhantomNet.Searching.Entities
                 FilterredCount = result.FilterredCount,
                 PageNumber = searchDescriptor?.PageSize == null ? 1 : searchDescriptor?.PageNumber ?? 1,
                 PageSize = searchDescriptor?.PageSize ?? int.MaxValue,
-                Matches = result.Results.Select(x => Mapper.Map<TModel>(x)),
+                Matches = result.Results.ToList().Select(x => Mapper.Map<TModel>(x)),
                 Filters = filters
             };
         }
