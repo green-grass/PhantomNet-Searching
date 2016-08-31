@@ -66,7 +66,7 @@ namespace PhantomNet.Searching.Entities
             await retrieveFiltersAsync(EntitiesSearchStore, entities);
 
             entities = Filter(entities, searchDescriptor);
-            result.FilterredCount = await Count(entities);
+            result.FilteredCount = await Count(entities);
             await refineFiltersAsync(EntitiesSearchStore, entities);
 
             entities = Sort(entities, searchDescriptor);

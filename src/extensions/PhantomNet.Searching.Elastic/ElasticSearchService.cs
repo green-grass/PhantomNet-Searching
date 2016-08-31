@@ -105,7 +105,7 @@
 //            }
 
 //            return new TSearchResult {
-//                FilterredCount = result.Total,
+//                FilteredCount = result.Total,
 //                PageNumber = SearchProvider.GetPageNumber(parameters),
 //                PageSize = SearchProvider.GetPageSize(parameters),
 //                Entities = result.Documents,

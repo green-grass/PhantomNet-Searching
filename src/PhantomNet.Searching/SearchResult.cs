@@ -7,7 +7,7 @@ namespace PhantomNet.Searching
     {
         public long TotalCount { get; set; }
 
-        public long FilterredCount { get; set; }
+        public long FilteredCount { get; set; }
 
         public int PageNumber { get; set; }
 

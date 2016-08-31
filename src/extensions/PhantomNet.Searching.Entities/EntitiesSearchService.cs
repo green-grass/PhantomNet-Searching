@@ -88,7 +88,7 @@ namespace PhantomNet.Searching.Entities
 
             return new TSearchResult() {
                 TotalCount = result.TotalCount,
-                FilterredCount = result.FilterredCount,
+                FilteredCount = result.FilteredCount,
                 PageNumber = searchDescriptor?.PageSize == null ? 1 : searchDescriptor?.PageNumber ?? 1,
                 PageSize = searchDescriptor?.PageSize ?? int.MaxValue,
                 Matches = result.Results.ToList().Select(x => Mapper.Map<TModel>(x)),
