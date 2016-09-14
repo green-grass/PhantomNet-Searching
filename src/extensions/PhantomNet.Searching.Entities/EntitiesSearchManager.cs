@@ -75,6 +75,7 @@ namespace PhantomNet.Searching.Entities
 
             if (SupportsExplicitLoadingEntity)
             {
+                result.Results = result.Results.ToList().AsQueryable();
                 await ExplicitLoadingEntityStore.ExplicitLoadAsync(result.Results, CancellationToken);
             }
 
