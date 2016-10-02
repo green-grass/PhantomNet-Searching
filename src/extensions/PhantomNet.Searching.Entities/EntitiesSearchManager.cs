@@ -15,7 +15,7 @@ namespace PhantomNet.Searching.Entities
         public EntitiesSearchManager(
             TStore store,
             ILogger<EntitiesSearchManager<TEntity, TParameters, TStore>> logger)
-            : base(store, null, null, null, null, logger)
+            : base(store, null, null, logger)
         { }
 
         private TStore EntitiesSearchStore => (TStore)Store;
