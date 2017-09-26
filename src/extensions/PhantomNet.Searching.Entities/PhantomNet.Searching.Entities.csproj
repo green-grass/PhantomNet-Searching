@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="5.2.0" />
-    <PackageReference Include="PhantomNet.Entities" Version="1.0.3-" />
+    <PackageReference Include="PhantomNet.Entities" Version="1.0.3-*" />
   </ItemGroup>
 
 </Project>
