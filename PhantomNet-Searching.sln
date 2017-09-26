@@ -1,28 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6E678F7D-78D4-4FB6-8E70-77E7986FDB6B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2E1E192C-294B-460B-A72D-5E89B698F545}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
-		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching", "src\PhantomNet.Searching\PhantomNet.Searching.xproj", "{5F8CB2BB-59DC-4A01-9003-741E831EA7DF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "extensions", "extensions", "{1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Elastic", "src\extensions\PhantomNet.Searching.Elastic\PhantomNet.Searching.Elastic.xproj", "{34B6841E-B830-4B48-8228-DABD289F4272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.Searching", "src\PhantomNet.Searching\PhantomNet.Searching.csproj", "{5F8CB2BB-59DC-4A01-9003-741E831EA7DF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Entities", "src\extensions\PhantomNet.Searching.Entities\PhantomNet.Searching.Entities.xproj", "{6ED3C951-BED4-452A-A9CD-6860BB4BEA91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.Searching.Elastic", "src\extensions\PhantomNet.Searching.Elastic\PhantomNet.Searching.Elastic.csproj", "{34B6841E-B830-4B48-8228-DABD289F4272}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Mvc", "src\extensions\PhantomNet.Searching.Mvc\PhantomNet.Searching.Mvc.xproj", "{BA57556D-8849-418A-AC26-EF2F03C53509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.Searching.Entities", "src\extensions\PhantomNet.Searching.Entities\PhantomNet.Searching.Entities.csproj", "{6ED3C951-BED4-452A-A9CD-6860BB4BEA91}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PhantomNet.Searching.Entities.AspNetCore", "src\extensions\PhantomNet.Searching.Entities.AspNetCore\PhantomNet.Searching.Entities.AspNetCore.xproj", "{31A329FE-F6F1-411A-AB07-E0405FCC42A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.Searching.Mvc", "src\extensions\PhantomNet.Searching.Mvc\PhantomNet.Searching.Mvc.csproj", "{BA57556D-8849-418A-AC26-EF2F03C53509}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhantomNet.Searching.Entities.AspNetCore", "src\extensions\PhantomNet.Searching.Entities.AspNetCore\PhantomNet.Searching.Entities.AspNetCore.csproj", "{31A329FE-F6F1-411A-AB07-E0405FCC42A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,11 +55,14 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5F8CB2BB-59DC-4A01-9003-741E831EA7DF} = {6E678F7D-78D4-4FB6-8E70-77E7986FDB6B}
 		{1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE} = {6E678F7D-78D4-4FB6-8E70-77E7986FDB6B}
+		{5F8CB2BB-59DC-4A01-9003-741E831EA7DF} = {6E678F7D-78D4-4FB6-8E70-77E7986FDB6B}
 		{34B6841E-B830-4B48-8228-DABD289F4272} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
 		{6ED3C951-BED4-452A-A9CD-6860BB4BEA91} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
 		{BA57556D-8849-418A-AC26-EF2F03C53509} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
 		{31A329FE-F6F1-411A-AB07-E0405FCC42A0} = {1A96CE06-BF16-4B86-9DAA-FC79EE3E5BFE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {628D2558-1CFA-4CB0-B3B1-915D4312C37C}
 	EndGlobalSection
 EndGlobal
