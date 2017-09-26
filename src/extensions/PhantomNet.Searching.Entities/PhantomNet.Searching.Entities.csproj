@@ -4,7 +4,7 @@
     <Description>PhantomNet.Searching.Entities class library</Description>
     <Copyright>Green Grass</Copyright>
     <AssemblyTitle>PhantomNet.Searching.Entities</AssemblyTitle>
-    <VersionPrefix>1.0.0-beta</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <Authors>Minh Nguyen</Authors>
     <TargetFramework>netstandard1.6</TargetFramework>
     <AssemblyName>PhantomNet.Searching.Entities</AssemblyName>
@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="5.2.0" />
-    <PackageReference Include="PhantomNet.Entities" Version="1.0.3-beta-0043" />
+    <PackageReference Include="PhantomNet.Entities" Version="1.0.3-" />
   </ItemGroup>
 
 </Project>
